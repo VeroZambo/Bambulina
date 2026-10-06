@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="es-AR">
+ <head><script>window["__codeletBootstrap__"]=JSON.parse('{"A":"A","B":"20261006-04-b082f3f","C":{"Abril Fatface":"YACgEZbkUVE,0","Alfa Slab One":"YACgEYS9sJU,0","Anton":"YACgEcYqQ-A,0","Archivo Black":"YACgEZulLoA,0","Archivo":"YAHO2-t-jNE,0","Arial":"YAGyDvJ_4Ts,0","Baloo 2":"YAHO2IcQUcM,0","Barlow Condensed":"YAFdJljEuFc,0","Bebas Neue":"YACgESME5ew,0","Bricolage Grotesque":"YAFyMcdwzpc,0","Canva Sans":"YAFdJjTk5UU,1","Caveat":"YALBs2ploWQ,0","Cinzel":"YACgEeV8bIQ,0","Cormorant Garamond":"YAFdJhX-538,0","Courier New":"YAGzXiGs0_8,0","Courier Prime":"YAD1aFjegN8,0","DM Sans":"YAD1aU3sLnI,0","DM Serif Display":"YAD1aYG82rc,0","Figtree":"YAHO2b-mV7A,0","Forum":"YACgEcnnqB4,0","Fraunces":"YAFdJpU7Kkk,0","Fredoka":"YACgEZml080,0","Georgia":"YAGzXkO0pEM,0","Hanken Grotesk":"YAHO2VB9G0I,0","Helvetica":"YAFcf7zkXN0,0","IBM Plex Mono":"YAFdJkmvhGI,0","IBM Plex Sans":"YAFdJgT0SHI,0","Impact":"YAFcfnjI7Vk,0","Instrument Serif":"YAHFeOnZNEk,0","Inter":"YAFdJvSyp_k,3","Italiana":"YAHO2Toik_w,0","Jacques Francois":"YAHO2a5g66Q,0","JetBrains Mono":"YAFdJksXcAk,0","Josefin Sans":"YAFdJjvw9Ps,0","Karla":"YAHO2V2NSXM,0","Lato":"YAFdJuFCnaw,0","Libre Baskerville":"YACgEUFdPdA,0","Lobster":"YAD8SnSjSFI,0","Lora":"YACgEXvxf8Q,0","Manrope":"YAHO2b2feC4,0","Merriweather":"YACgEXvHxxs,0","Montserrat":"YAFdtQi73Xs,0","Noto Sans JP":"YAFdJiHXlcI,0","Noto Sans KR":"YAGsojZj-RQ,0","Nunito Sans":"YAFdtQJYB9w,1","Nunito":"YAFdJoNRMmU,1","Oleo Script":"YACgEQQ14jI,0","Oswald":"YACgEQY10lw,0","Outfit":"YAHO2nVlg14,0","Pacifico":"YADLjORQ1u4,0","Playfair Display":"YAFdJhem5V8,1","Plus Jakarta Sans":"YAHO2gdhi18,0","Poppins":"YAFdJjbTu24,1","Press Start 2P":"YAFyGr-8pmQ,0","Quicksand":"YAFdJpYtCxE,1","Raleway":"YAFdJhmxbVQ,1","Roboto Slab":"YAFdJswIKAg,0","Rockwell":"YAFcfyVZnN0,0","Rye":"YACgEdQP21k,0","Sarabun":"YAFdJssSnME,0","Segoe UI":"YAHNdRD1Klw,0","Source Sans 3":"YAG4lO1Mj10,0","Space Grotesk":"YAHO2sjPCSM,0","Space Mono":"YADW1-vpsoc,0","Spectral":"YAHO2rVUHIM,0","Times New Roman":"YAGzXW3gftg,0","Trebuchet MS":"YAFcfrglpVA,0","Ubuntu":"YACgERDU--Q,0","Verdana":"YAGzXTctYtQ,0","Work Sans":"YAGXhLOKv44,0","Yellowtail":"YACgEYG4kG4,0"}}');</script><script src="/_sdk/6542d56fbfe7a3eb.telemetry_sdk.js" integrity="sha512-ECdM0nK7EkwDuOqho2qxgyRQXyBHk9hZqRKMBr+Xsu6zjeHlt+qkO2N2YRiHN7Kg4e1fEHDhjIp4bGJYVypv1g=="></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tienda 3D Educativa</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Fraunces:opsz,wght@9..144,600;9..144,700&amp;display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #102a43;
+      --paper: #f8f4ec;
+      --coral: #f15b45;
+      --teal: #007c78;
+      --line: #d8d1c4;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: "DM Sans", sans-serif;
+    }
+
+    .display-font { font-family: "Fraunces", serif; }
+    .dot-grid {
+      background-image: radial-gradient(rgba(16, 42, 67, 0.15) 1px, transparent 1px);
+      background-size: 18px 18px;
+    }
+    .hero-orbit {
+      position: absolute;
+      width: 440px;
+      height: 440px;
+      border: 1px solid rgba(255,255,255,.25);
+      border-radius: 50%;
+      right: -125px;
+      top: -155px;
+      pointer-events: none;
+    }
+    .hero-orbit::after {
+      content: "";
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      border-radius: 999px;
+      background: #f9ce4a;
+      left: 54px;
+      bottom: 45px;
+      box-shadow: 0 0 0 7px rgba(249,206,74,.19);
+    }
+    .product-card {
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+    .product-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 35px rgba(16,42,67,.13);
+    }
+    .product-image { transition: transform .45s ease; }
+    .product-card:hover .product-image { transform: scale(1.05); }
+
+    .cart-drawer {
+      transform: translateX(105%);
+      transition: transform .32s cubic-bezier(.2,.75,.25,1);
+    }
+    .cart-drawer.open { transform: translateX(0); }
+    .cart-backdrop {
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .25s ease;
+    }
+    .cart-backdrop.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .reveal {
+      animation: rise .7s both;
+    }
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(18px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .focus-ring:focus-visible {
+      outline: 3px solid #f9ce4a;
+      outline-offset: 3px;
+    }
+    .quantity-button {
+      width: 30px;
+      height: 30px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+  </style>
+  <script src="https://cdn.tailwindcss.com/3.4.17" type="text/javascript"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.577.0/dist/umd/lucide.min.js" type="text/javascript"></script>
+  <script src="/_sdk/6c2ecc939521f244.data_sdk.js" type="text/javascript" integrity="sha512-gRx8s+XsZDN6mSIQu2sivLZysbV0WHhb5kXNUWlgVb5lCMU1foJYukyMEDPv8Tnoocb8iwqB4XdRrWc7oEGzIQ=="></script>
+  <script src="/_sdk/1473331b860cdf5c.editing_sdk.js" type="text/javascript" integrity="sha512-zd/WiNJmdX2rRMgSDon0ny7eSp9O1vzGBXvBfGBu3AbU02LcUa3u+AcBTlNj+As6xOR2OKa6lFg023tgHMv5KQ=="></script>
+  <script src="/_sdk/ab4336f91e694f96.resizing_sdk.js" type="text/javascript" integrity="sha512-cxmeUrBrNlwwLr+tEu/iwM5F3boeK4qDMoH3QjUPqJptkO5NkaDVhQvyIHIn+3EflI5/uubWzkSA78B1tCswgA=="></script>
+ </head>
+ <body data-template-id="__page-root" class="w-full min-h-screen">
+  <header data-template-id="site-header" class="canva-header sticky top-0 z-30 border-b border-white/10">
+   <div class="w-full max-w-7xl mx-auto px-5 sm:px-8 py-4 flex items-center justify-between gap-4"><a href="#inicio" class="flex items-center gap-3 focus-ring rounded-lg"> <span class="w-10 h-10 rounded-xl bg-[#f9ce4a] text-[#102a43] font-bold flex items-center justify-center">3D</span> <span data-template-id="brand-name" class="canva-text font-bold tracking-tight"></span> </a>
+    <nav aria-label="Navegación principal" class="hidden sm:flex items-center gap-6"><a data-template-id="nav-catalog" class="canva-link text-sm font-semibold hover:opacity-75 focus-ring rounded" href="#catalogo"></a> <a data-template-id="nav-process" class="canva-link text-sm font-semibold hover:opacity-75 focus-ring rounded" href="#como-funciona"></a>
+    </nav><button id="open-cart" type="button" aria-label="Abrir carrito" aria-controls="cart-drawer" aria-expanded="false" class="focus-ring relative inline-flex items-center gap-2 rounded-full px-4 py-2 font-bold transition hover:brightness-110"> <i data-lucide="shopping-bag" width="18" height="18"></i> <span data-template-id="cart-label" class="canva-text hidden sm:inline"></span> <span id="cart-count" aria-live="polite" class="min-w-5 h-5 px-1 rounded-full bg-[#f9ce4a] text-[#102a43] text-xs flex items-center justify-center">0</span> </button>
+   </div>
+  </header>
+  <main>
+   <section id="inicio" class="relative overflow-hidden">
+    <div data-template-id="hero-section" class="canva-section relative w-full">
+     <div class="hero-orbit"></div>
+     <div class="w-full max-w-7xl mx-auto px-5 sm:px-8 py-14 lg:py-20 grid lg:grid-cols-2 gap-10 items-center">
+      <div class="relative z-10">
+       <p data-template-id="hero-eyebrow" class="canva-tag inline-flex px-3 py-1.5 rounded-full text-sm font-bold uppercase tracking-wider"></p>
+       <h1 data-template-id="hero-title" class="canva-text display-font mt-5 font-bold leading-[1.02] max-w-xl"></h1>
+       <p data-template-id="hero-description" class="canva-text mt-5 max-w-xl leading-relaxed"></p><button id="explore-products" type="button" data-template-id="hero-cta" class="canva-button focus-ring mt-8 inline-flex items-center gap-2 rounded-full px-6 py-3 font-bold shadow-lg transition hover:-translate-y-0.5"> <span></span><i data-lucide="arrow-down" width="18" height="18"></i> </button>
+      </div>
+      <div class="relative reveal" style="animation-delay:.16s">
+       <div class="absolute -inset-3 bg-[#f9ce4a] rounded-[2rem] rotate-3"></div><img data-template-id="hero-image" loading="lazy" class="canva-image relative w-full h-[320px] sm:h-[410px] object-cover rounded-[1.6rem] shadow-2xl">
+       <div data-template-id="hero-note" class="canva-banner absolute -bottom-5 -left-3 sm:left-7 rounded-xl px-4 py-3 shadow-xl max-w-[240px]"><span class="block font-bold text-sm">Diseñado para aprender tocando</span>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+   <section id="catalogo" class="w-full py-16 sm:py-20 dot-grid">
+    <div class="w-full max-w-7xl mx-auto px-5 sm:px-8">
+     <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-5 mb-9">
+      <div>
+       <p data-template-id="catalog-eyebrow" class="canva-tag text-sm uppercase tracking-[.18em] font-bold"></p>
+       <h2 data-template-id="catalog-title" class="canva-text display-font mt-2 font-bold"></h2>
+      </div>
+      <p data-template-id="catalog-helper" class="canva-text max-w-sm leading-relaxed"></p>
+     </div>
+     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <article data-template-id="product-card-1" class="canva-card product-card overflow-hidden rounded-2xl border border-[#d8d1c4] shadow-sm">
+       <div class="h-52 overflow-hidden"><img data-template-id="product-image-1" loading="lazy" class="canva-image product-image w-full h-full object-cover">
+       </div>
+       <div class="p-5">
+        <p data-template-id="product-category-1" class="canva-tag text-xs uppercase tracking-widest font-bold"></p>
+        <h3 data-template-id="product-title-1" class="canva-text display-font mt-2 font-bold"></h3>
+        <p data-template-id="product-description-1" class="canva-text mt-2 text-sm leading-relaxed"></p>
+        <div class="mt-5 flex items-center justify-between gap-3"><span data-template-id="product-price-1" class="canva-text text-lg font-bold"></span> <button type="button" data-product-id="heart" class="add-product focus-ring rounded-full px-4 py-2 text-sm font-bold transition hover:brightness-95"> <span data-template-id="add-button-1" class="canva-text"></span> </button>
+        </div>
+       </div>
+      </article>
+      <article data-template-id="product-card-2" class="canva-card product-card overflow-hidden rounded-2xl border border-[#d8d1c4] shadow-sm">
+       <div class="h-52 overflow-hidden"><img data-template-id="product-image-2" loading="lazy" class="canva-image product-image w-full h-full object-cover">
+       </div>
+       <div class="p-5">
+        <p data-template-id="product-category-2" class="canva-tag text-xs uppercase tracking-widest font-bold"></p>
+        <h3 data-template-id="product-title-2" class="canva-text display-font mt-2 font-bold"></h3>
+        <p data-template-id="product-description-2" class="canva-text mt-2 text-sm leading-relaxed"></p>
+        <div class="mt-5 flex items-center justify-between gap-3"><span data-template-id="product-price-2" class="canva-text text-lg font-bold"></span> <button type="button" data-product-id="dino" class="add-product focus-ring rounded-full px-4 py-2 text-sm font-bold transition hover:brightness-95"> <span data-template-id="add-button-2" class="canva-text"></span> </button>
+        </div>
+       </div>
+      </article>
+      <article data-template-id="product-card-3" class="canva-card product-card overflow-hidden rounded-2xl border border-[#d8d1c4] shadow-sm">
+       <div class="h-52 overflow-hidden"><img data-template-id="product-image-3" loading="lazy" class="canva-image product-image w-full h-full object-cover">
+       </div>
+       <div class="p-5">
+        <p data-template-id="product-category-3" class="canva-tag text-xs uppercase tracking-widest font-bold"></p>
+        <h3 data-template-id="product-title-3" class="canva-text display-font mt-2 font-bold"></h3>
+        <p data-template-id="product-description-3" class="canva-text mt-2 text-sm leading-relaxed"></p>
+        <div class="mt-5 flex items-center justify-between gap-3"><span data-template-id="product-price-3" class="canva-text text-lg font-bold"></span> <button type="button" data-product-id="solar" class="add-product focus-ring rounded-full px-4 py-2 text-sm font-bold transition hover:brightness-95"> <span data-template-id="add-button-3" class="canva-text"></span> </button>
+        </div>
+       </div>
+      </article>
+      <article data-template-id="product-card-4" class="canva-card product-card overflow-hidden rounded-2xl border border-[#d8d1c4] shadow-sm">
+       <div class="h-52 overflow-hidden"><img data-template-id="product-image-4" loading="lazy" class="canva-image product-image w-full h-full object-cover">
+       </div>
+       <div class="p-5">
+        <p data-template-id="product-category-4" class="canva-tag text-xs uppercase tracking-widest font-bold"></p>
+        <h3 data-template-id="product-title-4" class="canva-text display-font mt-2 font-bold"></h3>
+        <p data-template-id="product-description-4" class="canva-text mt-2 text-sm leading-relaxed"></p>
+        <div class="mt-5 flex items-center justify-between gap-3"><span data-template-id="product-price-4" class="canva-text text-lg font-bold"></span> <button type="button" data-product-id="geometry" class="add-product focus-ring rounded-full px-4 py-2 text-sm font-bold transition hover:brightness-95"> <span data-template-id="add-button-4" class="canva-text"></span> </button>
+        </div>
+       </div>
+      </article>
+      <article data-template-id="product-card-5" class="canva-card product-card overflow-hidden rounded-2xl border border-[#d8d1c4] shadow-sm">
+       <div class="h-52 overflow-hidden"><img data-template-id="product-image-5" loading="lazy" class="canva-image product-image w-full h-full object-cover">
+       </div>
+       <div class="p-5">
+        <p data-template-id="product-category-5" class="canva-tag text-xs uppercase tracking-widest font-bold"></p>
+        <h3 data-template-id="product-title-5" class="canva-text display-font mt-2 font-bold"></h3>
+        <p data-template-id="product-description-5" class="canva-text mt-2 text-sm leading-relaxed"></p>
+        <div class="mt-5 flex items-center justify-between gap-3"><span data-template-id="product-price-5" class="canva-text text-lg font-bold"></span> <button type="button" data-product-id="molecule" class="add-product focus-ring rounded-full px-4 py-2 text-sm font-bold transition hover:brightness-95"> <span data-template-id="add-button-5" class="canva-text"></span> </button>
+        </div>
+       </div>
+      </article>
+      <article data-template-id="product-card-6" class="canva-card product-card overflow-hidden rounded-2xl border border-[#d8d1c4] shadow-sm">
+       <div class="h-52 overflow-hidden"><img data-template-id="product-image-6" loading="lazy" class="canva-image product-image w-full h-full object-cover">
+       </div>
+       <div class="p-5">
+        <p data-template-id="product-category-6" class="canva-tag text-xs uppercase tracking-widest font-bold"></p>
+        <h3 data-template-id="product-title-6" class="canva-text display-font mt-2 font-bold"></h3>
+        <p data-template-id="product-description-6" class="canva-text mt-2 text-sm leading-relaxed"></p>
+        <div class="mt-5 flex items-center justify-between gap-3"><span data-template-id="product-price-6" class="canva-text text-lg font-bold"></span> <button type="button" data-product-id="map" class="add-product focus-ring rounded-full px-4 py-2 text-sm font-bold transition hover:brightness-95"> <span data-template-id="add-button-6" class="canva-text"></span> </button>
+        </div>
+       </div>
+      </article>
+     </div>
+    </div>
+   </section>
+   <section id="como-funciona" data-template-id="process-section" class="canva-section w-full py-14">
+    <div class="w-full max-w-7xl mx-auto px-5 sm:px-8 grid md:grid-cols-[1fr_1.5fr] gap-10 items-start">
+     <div>
+      <p data-template-id="process-eyebrow" class="canva-tag text-sm font-bold uppercase tracking-[.18em]"></p>
+      <h2 data-template-id="process-title" class="canva-text display-font mt-3 font-bold"></h2>
+     </div>
+     <div class="grid sm:grid-cols-3 gap-5">
+      <div class="border-l-2 border-[#f15b45] pl-4"><span class="text-[#f15b45] font-bold">01</span>
+       <h3 data-template-id="process-step-1-title" class="canva-text mt-2 font-bold"></h3>
+       <p data-template-id="process-step-1-text" class="canva-text mt-2 text-sm leading-relaxed"></p>
+      </div>
+      <div class="border-l-2 border-[#f15b45] pl-4"><span class="text-[#f15b45] font-bold">02</span>
+       <h3 data-template-id="process-step-2-title" class="canva-text mt-2 font-bold"></h3>
+       <p data-template-id="process-step-2-text" class="canva-text mt-2 text-sm leading-relaxed"></p>
+      </div>
+      <div class="border-l-2 border-[#f15b45] pl-4"><span class="text-[#f15b45] font-bold">03</span>
+       <h3 data-template-id="process-step-3-title" class="canva-text mt-2 font-bold"></h3>
+       <p data-template-id="process-step-3-text" class="canva-text mt-2 text-sm leading-relaxed"></p>
+      </div>
+     </div>
+    </div>
+   </section>
+  </main>
+  <footer data-template-id="site-footer" class="canva-footer w-full">
+   <div class="w-full max-w-7xl mx-auto px-5 sm:px-8 py-7 flex flex-col sm:flex-row justify-between gap-3 text-sm"><span data-template-id="footer-brand" class="canva-text font-bold"></span> <span data-template-id="footer-note" class="canva-text"></span>
+   </div>
+  </footer>
+  <div id="cart-backdrop" class="cart-backdrop fixed inset-0 z-40 bg-[#102a43]/55" aria-hidden="true"></div>
+  <aside id="cart-drawer" class="cart-drawer fixed right-0 top-0 z-50 w-full max-w-md h-full bg-[#f8f4ec] shadow-2xl flex flex-col" aria-label="Carrito de compras" aria-hidden="true">
+   <div data-template-id="cart-header" class="canva-header flex items-center justify-between px-6 py-5 border-b border-[#d8d1c4]">
+    <div>
+     <p data-template-id="drawer-eyebrow" class="canva-tag text-xs uppercase tracking-widest font-bold"></p>
+     <h2 data-template-id="drawer-title" class="canva-text display-font mt-1 font-bold"></h2>
+    </div><button id="close-cart" type="button" aria-label="Cerrar carrito" class="focus-ring rounded-full p-2 hover:bg-black/5"> <i data-lucide="x" width="22" height="22"></i> </button>
+   </div>
+   <div id="cart-items" class="flex-1 overflow-y-auto px-6 py-5 space-y-4"></div>
+   <div id="cart-empty" class="flex-1 px-6 flex flex-col items-center justify-center text-center">
+    <div class="w-14 h-14 rounded-full bg-[#d7efed] flex items-center justify-center text-[#007c78]"><i data-lucide="shopping-bag" width="26" height="26"></i>
+    </div>
+    <h3 data-template-id="empty-cart-title" class="canva-text display-font mt-4 font-bold"></h3>
+    <p data-template-id="empty-cart-text" class="canva-text mt-2 text-sm leading-relaxed max-w-xs"></p>
+   </div>
+   <div id="cart-summary" class="hidden border-t border-[#d8d1c4] p-6">
+    <div class="flex items-center justify-between mb-2"><span data-template-id="subtotal-label" class="canva-text font-semibold"></span> <span id="cart-total" class="font-bold text-xl">$ 0</span>
+    </div>
+    <p id="cart-units" class="text-sm text-[#5c6b73] mb-5"></p><button id="review-order" type="button" data-template-id="review-order-button" class="canva-button focus-ring w-full rounded-full py-3 font-bold transition hover:brightness-95"></button> <button id="clear-cart" type="button" data-template-id="clear-cart-button" class="canva-button focus-ring w-full mt-3 rounded-full py-2.5 font-bold"></button>
+   </div>
+   <div id="order-review" class="hidden absolute inset-0 bg-[#f8f4ec] p-6 flex flex-col"><button id="back-to-cart" type="button" class="focus-ring self-start inline-flex items-center gap-2 rounded-lg py-2 text-sm font-bold"> <i data-lucide="arrow-left" width="17" height="17"></i> <span data-template-id="back-cart-label" class="canva-text"></span> </button>
+    <div class="mt-8">
+     <p data-template-id="review-eyebrow" class="canva-tag text-xs uppercase tracking-widest font-bold"></p>
+     <h2 data-template-id="review-title" class="canva-text display-font mt-2 font-bold"></h2>
+     <p data-template-id="review-copy" class="canva-text mt-3 text-sm leading-relaxed"></p>
+    </div>
+    <div id="order-review-items" class="mt-6 space-y-3 flex-1 overflow-y-auto"></div>
+    <div class="border-t border-[#d8d1c4] pt-4 flex justify-between font-bold"><span data-template-id="review-total-label" class="canva-text"></span> <span id="review-total"></span>
+    </div>
+   </div>
+  </aside>
+  <template id="cart-item-template">
+   <article data-template-id="cart-item" class="canva-card flex gap-3 border-b border-[#d8d1c4] pb-4">
+    <div class="w-12 h-12 rounded-lg bg-[#d7efed] text-[#007c78] flex items-center justify-center shrink-0"><i data-lucide="box" width="21" height="21"></i>
+    </div>
+    <div class="min-w-0 flex-1">
+     <div class="flex justify-between gap-3">
+      <h3 data-template-id="cart-item-title" class="canva-text font-bold text-sm"></h3><button type="button" class="remove-item focus-ring p-1 rounded text-[#a33a2f]" aria-label="Quitar producto"> <i data-lucide="trash-2" width="16" height="16"></i> </button>
+     </div>
+     <p data-template-id="cart-item-price" class="canva-text text-sm mt-1"></p>
+     <div class="flex items-center justify-between mt-3">
+      <div class="flex items-center border border-[#d8d1c4] rounded-full overflow-hidden"><button type="button" class="decrease-item quantity-button focus-ring" aria-label="Restar una unidad"><i data-lucide="minus" width="14" height="14"></i></button> <span class="item-quantity w-7 text-center text-sm font-bold"></span> <button type="button" class="increase-item quantity-button focus-ring" aria-label="Sumar una unidad"><i data-lucide="plus" width="14" height="14"></i></button>
+      </div><strong class="item-line-total text-sm"></strong>
+     </div>
+    </div>
+   </article>
+  </template>
+  <div id="live-message" class="sr-only" aria-live="polite"></div>
+  <script>
+    const products = {
+      heart: { name: "Corazón anatómico", price: 18500 },
+      dino: { name: "Esqueleto de dinosaurio", price: 16200 },
+      solar: { name: "Sistema solar orbital", price: 22400 },
+      geometry: { name: "Kit de geometría", price: 14300 },
+      molecule: { name: "Modelo molecular", price: 19800 },
+      map: { name: "Mapa topográfico", price: 17600 }
+    };
+
+    const cart = new Map();
+    const currency = new Intl.NumberFormat("es-AR", { style: "currency", currency: "ARS", maximumFractionDigits: 0 });
+
+    const cartDrawer = document.getElementById("cart-drawer");
+    const cartBackdrop = document.getElementById("cart-backdrop");
+    const cartItems = document.getElementById("cart-items");
+    const cartEmpty = document.getElementById("cart-empty");
+    const cartSummary = document.getElementById("cart-summary");
+    const orderReview = document.getElementById("order-review");
+    const liveMessage = document.getElementById("live-message");
+
+    function setDrawer(open) {
+      cartDrawer.classList.toggle("open", open);
+      cartBackdrop.classList.toggle("open", open);
+      cartDrawer.setAttribute("aria-hidden", String(!open));
+      cartBackdrop.setAttribute("aria-hidden", String(!open));
+      document.getElementById("open-cart").setAttribute("aria-expanded", String(open));
+      if (!open) orderReview.classList.add("hidden");
+    }
+
+    function announce(message) {
+      liveMessage.textContent = message;
+    }
+
+    function renderCart() {
+      cartItems.innerHTML = "";
+      const hasItems = cart.size > 0;
+      cartEmpty.classList.toggle("hidden", hasItems);
+      cartSummary.classList.toggle("hidden", !hasItems);
+
+      let count = 0;
+      let total = 0;
+
+      cart.forEach((quantity, productId) => {
+        const product = products[productId];
+        const lineTotal = product.price * quantity;
+        count += quantity;
+        total += lineTotal;
+
+        const fragment = document.getElementById("cart-item-template").content.cloneNode(true);
+        const row = fragment.querySelector("[data-template-id='cart-item']");
+        row.dataset.productId = productId;
+        row.querySelector("[data-template-id='cart-item-title']").textContent = product.name;
+        row.querySelector("[data-template-id='cart-item-price']").textContent = currency.format(product.price);
+        row.querySelector(".item-quantity").textContent = quantity;
+        row.querySelector(".item-line-total").textContent = currency.format(lineTotal);
+
+        row.querySelector(".increase-item").addEventListener("click", () => changeQuantity(productId, 1));
+        row.querySelector(".decrease-item").addEventListener("click", () => changeQuantity(productId, -1));
+        row.querySelector(".remove-item").addEventListener("click", () => {
+          cart.delete(productId);
+          renderCart();
+          announce(product.name + " fue eliminado del carrito.");
+        });
+
+        cartItems.appendChild(fragment);
+      });
+
+      document.getElementById("cart-count").textContent = count;
+      document.getElementById("cart-total").textContent = currency.format(total);
+      document.getElementById("cart-units").textContent = count + (count === 1 ? " producto en tu carrito" : " productos en tu carrito");
+    }
+
+    function changeQuantity(productId, amount) {
+      const next = (cart.get(productId) || 0) + amount;
+      if (next <= 0) cart.delete(productId);
+      else cart.set(productId, next);
+      renderCart();
+    }
+
+    function showOrderReview() {
+      const reviewItems = document.getElementById("order-review-items");
+      reviewItems.innerHTML = "";
+      let total = 0;
+
+      cart.forEach((quantity, productId) => {
+        const product = products[productId];
+        const lineTotal = product.price * quantity;
+        total += lineTotal;
+        const line = document.createElement("div");
+        line.className = "flex items-center justify-between gap-4 text-sm border-b border-[#d8d1c4] pb-3";
+        line.innerHTML = "<span><strong>" + quantity + "×</strong> " + product.name + "</span><strong>" + currency.format(lineTotal) + "</strong>";
+        reviewItems.appendChild(line);
+      });
+
+      document.getElementById("review-total").textContent = currency.format(total);
+      orderReview.classList.remove("hidden");
+    }
+
+    document.querySelectorAll(".add-product").forEach((button) => {
+      button.addEventListener("click", () => {
+        const id = button.dataset.productId;
+        cart.set(id, (cart.get(id) || 0) + 1);
+        renderCart();
+        setDrawer(true);
+        announce(products[id].name + " se agregó al carrito.");
+      });
+    });
+
+    document.getElementById("open-cart").addEventListener("click", () => setDrawer(true));
+    document.getElementById("close-cart").addEventListener("click", () => setDrawer(false));
+    cartBackdrop.addEventListener("click", () => setDrawer(false));
+    document.getElementById("explore-products").addEventListener("click", () => document.getElementById("catalogo").scrollIntoView({ behavior: "smooth" }));
+    document.getElementById("clear-cart").addEventListener("click", () => {
+      cart.clear();
+      renderCart();
+      announce("El carrito fue vaciado.");
+    });
+    document.getElementById("review-order").addEventListener("click", showOrderReview);
+    document.getElementById("back-to-cart").addEventListener("click", () => orderReview.classList.add("hidden"));
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") setDrawer(false);
+    });
+
+    document.addEventListener("DOMContentLoaded", () => {
+      lucide.createIcons();
+      renderCart();
+    });
+  </script>
+ </body>
+</html>
